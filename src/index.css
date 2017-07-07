@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.easel-container {
+  background-color: red;
+  border: 1px black solid;
+  height: 46vw;
+  width: 70vw;
+}
+
+.canvas {
+  height: 46vw;
+  width: 60vw;
+}
+
+.palette {
+  border-right: 1px black solid;
+  height: 46vw;
+  width: 10vw;
+}
+
+.color-buttons {
+  background-color: #000;
+  border: 1px black solid;
+  color: #fff;
+  height: 8vw;
+  margin-left: 1vw;
+  width: 4vw;
+}
+
+.red {
+
+}
+
+
+.pixels {
+
+}
