@@ -4,7 +4,7 @@ import React from 'react'
 
 class Pixels extends MoriComponent {
   render () {
-    const color = mori.get(this.props.imdata, 'color')
+    // const color = mori.get(this.props.imdata, 'color')
     const rowIdx = mori.get(this.props.imdata, 'rowIdx')
     const colIdx = mori.get(this.props.imdata, 'colIdx')
     let className = 'pixels'
@@ -12,11 +12,11 @@ class Pixels extends MoriComponent {
     const clickFn = mori.partial(clickPixel, rowIdx, colIdx)
 
     const pixelStyle = {
-      backgroundColor: color
+      backgroundColor: '#fff'
     }
 
-    return (<div>PIXELS</div>
-      // <div className={className} onClick={clickFn} style={pixelStyle} />
+    return (
+      <div className={className} onClick={clickFn} style={pixelStyle} />
     )
   }
 }
@@ -27,7 +27,7 @@ function booleanNot (x) {
 
 function clickPixel (rowIdx, colIdx) {
   const currentState = window.CURRENT_STATE
-  const newState = mori.updateIn(currentState, ['board', rowIdx, colIdx], booleanNot)
+  const newState = mori.updateIn(currentState, ['canvas', rowIdx, colIdx], booleanNot)
   window.NEXT_STATE = newState
 }
 

@@ -1,41 +1,100 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
 }
 
+h1 {
+  font-size: 5vw;
+}
+
+.title-red {
+  color: red;
+  display: inline;
+  margin-left: 200px;
+}
+
+.title-orange {
+  color: orange;
+  display: inline;
+}
+
+.title-green {
+  color: green;
+  display: inline;
+}
+
+.title-black {
+  color: black;
+  display: inline;
+}
+
+.title-blue {
+  color: blue;
+  display: inline;
+}
+
 .easel-container {
-  background-color: red;
-  border: 1px black solid;
-  height: 46vw;
-  width: 70vw;
+  margin-left: 200px;
 }
 
 .canvas {
-  height: 46vw;
-  width: 60vw;
+  border: 2px black solid;
+  display: inline-block;
+}
+
+.row {
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.pixels {
+  height: 4px;
+  width: 4px;
+  border: solid 1px #e6e6e6;
+  display: inline-block;
+  margin: 0;
 }
 
 .palette {
-  border-right: 1px black solid;
-  height: 46vw;
-  width: 10vw;
+  display: inline-block;
+  width: 100px;
 }
 
-.color-buttons {
-  background-color: #000;
-  border: 1px black solid;
-  color: #fff;
-  height: 8vw;
-  margin-left: 1vw;
-  width: 4vw;
+.color-button {
+  height: 40px;
+  width: 40px;
+  margin: 5px auto;
 }
 
 .red {
-
+  background-color: red;
 }
-
-
-.pixels {
-
+.orange {
+  background-color: orange;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+.purple {
+  background-color: purple;
+}
+.black {
+  background-color: black;
+}
+.gray {
+  background-color: gray;
+}
+.magenta {
+  background-color: maroon;
+}
+.turquoise {
+  background-color: turquoise;
 }

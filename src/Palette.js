@@ -6,12 +6,17 @@ class Palette extends MoriComponent {
     const brushColors = [
       'red', 'orange', 'yellow', 'green', 'blue', 'purple', 'black', 'gray', 'magenta', 'turquoise'
     ]
-    return ( <div>PALETTE</div>)
-    // brushColors.map(function (colors, index) {
-    //   return (
-    //     <div className={colors} key={index} />
-    //   )
-    // })
+    let colorButtons = brushColors.map(function (color, index) {
+      let className = 'color-button ' + color
+      return (
+        <div key={index} className={className} />
+      )
+    })
+    return (
+      <div className='palette'>
+        {colorButtons}
+      </div>
+    )
   }
 }
 

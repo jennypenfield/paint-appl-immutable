@@ -1,15 +1,15 @@
 import React from 'react'
 import mori from 'mori'
-import Easel from './Easel'
+import Palette from './Palette'
 import Rows from './Rows'
 
 function App (props) {
-  const board = mori.get(props.imdata, 'board')
-  const numRows = mori.count(board)
+  const canvas = mori.get(props.imdata, 'canvas')
+  const numRows = mori.count(canvas)
 
   let rows = []
   for (let rowIdx = 0; rowIdx < numRows; rowIdx++) {
-    let rowVec = mori.get(board, rowIdx)
+    let rowVec = mori.get(canvas, rowIdx)
     let rowData = mori.hashMap('rows', rowVec, 'rowIdx', rowIdx)
     let key = 'row-' + rowIdx
 
@@ -18,9 +18,15 @@ function App (props) {
 
   return (
     <div className='app-container'>
-      HELLO
-      <h1>Paint</h1>
-      < Easel />
+      <h1 className='title-red'>P</h1><h1 className='title-orange'>A</h1>
+      <h1 className='title-green'>I</h1>
+      <h1 className='title-black'>N</h1><h1 className='title-blue'>T</h1>
+      <div className='easel-container'>
+        <div className='canvas'>
+          {rows}
+        </div>
+        <Palette />
+      </div>
     </div>
   )
 }

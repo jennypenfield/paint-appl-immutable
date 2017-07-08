@@ -7,9 +7,8 @@ import './index.css'
 // Application State
 // -----------------------------------------------------------------------------
 
-// 800 x 625 = 500,000px
-const NUM_ROWS = 625
-const NUM_COLS = 800
+const NUM_ROWS = 80
+const NUM_COLS = 100
 
 function createEmptyCanvas () {
   var canvas = []
@@ -57,7 +56,6 @@ function render () {
     // do not perform the update if NEXT_STATE is not valid
     if (!isValidState(window.NEXT_STATE)) {
       console.warn('Oops! Tried to set an invalid NEXT_STATE')
-      console.log(window.NEXT_STATE)
       window.NEXT_STATE = window.CURRENT_STATE
     } else {
       // next state is now our current state

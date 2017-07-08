@@ -4,6 +4,7 @@ import MoriComponent from './MoriComponent'
 import Pixels from './Pixels'
 
 class Rows extends MoriComponent {
+
   render () {
     const rowVec = mori.get(this.props.imdata, 'rows')
     const numCols = mori.count(rowVec)
@@ -11,16 +12,16 @@ class Rows extends MoriComponent {
 
     let pixels = []
     for (let colIdx = 0; colIdx < numCols; colIdx++) {
-      let isOn = mori.get(rowVec, colIdx)
-      let pixelData = mori.hashMap('rowIdx', rowIdx, 'colIdx', colIdx, 'isOn', isOn)
-      let key = 'square-' + rowIdx + '-' + colIdx
+      let color = mori.get(rowVec, colIdx)
+      let pixelData = mori.hashMap('rowIdx', rowIdx, 'colIdx', colIdx, 'color', color)
+      let key = 'pixel-' + rowIdx + '-' + colIdx
 
       pixels.push(<Pixels imdata={pixelData} key={key} />)
     }
 
-    return (<div><Pixels /></div>
-      // <div className='row'>{pixels}</div>
-    )
+  return (
+       <div className='row'>{pixels}</div>
+   )
   }
 }
 
