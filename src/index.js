@@ -1,3 +1,4 @@
+import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import mori from 'mori'
@@ -7,8 +8,8 @@ import './index.css'
 // Application State
 // -----------------------------------------------------------------------------
 
-const NUM_ROWS = 80
-const NUM_COLS = 100
+const NUM_ROWS = 8
+const NUM_COLS = 10
 
 function createEmptyCanvas () {
   var canvas = []
@@ -24,9 +25,13 @@ function createEmptyCanvas () {
 }
 
 window.EMPTY_CANVAS = mori.toClj(createEmptyCanvas())
+window.COLORS = mori.vector('red', 'orange', 'yellow', 'green', 'blue', 'purple',
+  'black', 'gray', 'hotpink', 'turquoise')
 
 const initialState = {
-  canvas: window.EMPTY_CANVAS
+  canvas: window.EMPTY_CANVAS,
+  colors: window.COLORS,
+  currentColor: 'black'
 }
 
 // CURRENT_STATE is always the current state of the application
@@ -35,6 +40,7 @@ window.CURRENT_STATE = null
 // NEXT_STATE is the next state the application should be in
 // Start it off with a PDS version of our initialState object.
 window.NEXT_STATE = mori.toClj(initialState)
+window.IS_PRESSED_DOWN = false
 
 let renderCount = 0
 
@@ -65,6 +71,7 @@ function render () {
       // window.HISTORY = mori.conj(window.HISTORY, window.CURRENT_STATE)
 
       ReactDOM.render(App({imdata: window.CURRENT_STATE}), rootEl)
+      // ReactDOM.render(<App />, rootEl)
 
       renderCount = renderCount + 1
       // console.log('Render #' + renderCount)
@@ -76,9 +83,8 @@ function render () {
 
 window.requestAnimationFrame(render)
 
-// this is a sanity-check function so you can ensure your state is valid
+// ensure valid state
 function isValidState (state) {
   return mori.isMap(state) &&
          mori.isVector(mori.get(state, 'canvas'))
-         // TODO: add more conditions here as appropriate
 }

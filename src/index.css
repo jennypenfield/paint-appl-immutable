@@ -34,6 +34,28 @@ h1 {
   display: inline;
 }
 
+.reset-button {
+  background-color: lightgray;
+  border-color: black;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 30px;
+  margin-left: 50px;
+  margin-top: 20px;
+  vertical-align: top;
+}
+
+.undo-button {
+  background-color: lightgray;
+  border-color: black;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 30px;
+  margin-left: 50px;
+  margin-top: 20px;
+  vertical-align: top;
+}
+
 .easel-container {
   margin-left: 200px;
 }
@@ -50,8 +72,8 @@ h1 {
 }
 
 .pixels {
-  height: 4px;
-  width: 4px;
+  height: 40px;
+  width: 40px;
   border: solid 1px #e6e6e6;
   display: inline-block;
   margin: 0;
@@ -63,6 +85,7 @@ h1 {
 }
 
 .color-button {
+  border: 0.5px black solid;
   height: 40px;
   width: 40px;
   margin: 5px auto;
@@ -92,8 +115,8 @@ h1 {
 .gray {
   background-color: gray;
 }
-.magenta {
-  background-color: maroon;
+.hotpink {
+  background-color: hotpink;
 }
 .turquoise {
   background-color: turquoise;

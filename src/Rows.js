@@ -4,7 +4,6 @@ import MoriComponent from './MoriComponent'
 import Pixels from './Pixels'
 
 class Rows extends MoriComponent {
-
   render () {
     const rowVec = mori.get(this.props.imdata, 'rows')
     const numCols = mori.count(rowVec)
@@ -19,9 +18,9 @@ class Rows extends MoriComponent {
       pixels.push(<Pixels imdata={pixelData} key={key} />)
     }
 
-  return (
-       <div className='row'>{pixels}</div>
-   )
+    return (
+      <div className='row'>{pixels}</div>
+    )
   }
 }
 
