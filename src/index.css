@@ -57,7 +57,7 @@ h1 {
 }
 
 .easel-container {
-  margin-left: 200px;
+  margin-left: 100px;
 }
 
 .canvas {
@@ -72,11 +72,13 @@ h1 {
 }
 
 .pixels {
-  height: 40px;
-  width: 40px;
-  border: solid 1px #e6e6e6;
+  box-sizing: border-box;
+  height: 10px;
+  width: 10px;
+  /*border: solid 1px #e6e6e6;*/
   display: inline-block;
   margin: 0;
+  padding: 0;
 }
 
 .palette {
