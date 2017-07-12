@@ -39,9 +39,11 @@ class App extends MoriComponent {
 
     return (
       <div className='app-container'>
-        <h1 className='title-red'>P</h1><h1 className='title-orange'>A</h1>
-        <h1 className='title-green'>I</h1>
-        <h1 className='title-black'>N</h1><h1 className='title-blue'>T</h1>
+        <h1>
+          <span className='title-red'>P</span><span className='title-orange'>A</span>
+          <span className='title-green'>I</span>
+          <span className='title-black'>N</span><span className='title-blue'>T</span>
+        </h1>
         <button className='reset-button' onClick={clickReset}>reset</button>
         <button className='undo-button' onClick={clickUndo}>undo</button>
         <div className='easel-container'>
